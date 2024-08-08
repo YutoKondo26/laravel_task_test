@@ -30,6 +30,7 @@ class ContactFormController extends Controller
         $query = ContactForm::search($search);
         $contacts = $query->select('id','name','title','created_at')
         ->paginate();
+        
 
         return view('contacts.index',compact('contacts'));
     }
